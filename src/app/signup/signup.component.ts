@@ -7,23 +7,23 @@ import {CartService} from '../cart.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
-  loginForm: FormGroup;
+  signup: FormGroup;
   obj: any;
   status = false;
 
   constructor(private fb : FormBuilder, private cartService : CartService) {
-    this.loginForm = fb.group({
+    this.signup = fb.group({
       mail: [""],
       password: [""]
     });
   }
 
   onSubmit() {
-    this.obj = this.loginForm.value;
+    this.obj = this.signup.value;
     // this.onAdd.emit(this.obj);
-    console.log(this.loginForm.value);
-    this.cartService.login(this.obj).subscribe(res => {console.log(res)})
-    this.loginForm.reset();
+    console.log(this.signup.value);
+    this.cartService.signup(this.obj).subscribe(res => {console.log(res)})
+    this.signup.reset();
   }addToggle()
   {
     this.status = !this.status;
