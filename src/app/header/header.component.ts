@@ -13,5 +13,8 @@ export class HeaderComponent {
   {
     this.status = !this.status;
   }
+  scroll(el: HTMLElement) {
+    el.scrollIntoView();
+  }
 
 }

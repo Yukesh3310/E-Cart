@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -13,4 +13,7 @@ export class AppComponent {
   {
     this.status = !this.status;
   }
+  scroll(el: ElementRef) {
+    el.nativeElement.scrollIntoView();
+ }
 }
